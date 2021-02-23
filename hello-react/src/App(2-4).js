@@ -4,7 +4,7 @@ function App(){
     return(
         <Fragment>
             <h1>hi</h1>
-            <h2>hello</h2>
+            <h2>heollo</h2>
         </Fragment>
     )
 }
