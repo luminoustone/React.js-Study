@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import EventPractice from './EventPractice';
+import EventPractice from './EventPractice_function';
 
 const App =() => {
   return <EventPractice/>;
