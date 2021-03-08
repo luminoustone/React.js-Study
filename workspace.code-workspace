@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "hello-react"
+		},
+		{
+			"path": "event-handling"
+		},
+		{
+			"path": "ref&iter"
+		},
+		{
+			"path": "hooks-tutorial"
+		},
+		{
+			"path": "todo-app"
+		}
+	],
+	"settings": {}
+}
