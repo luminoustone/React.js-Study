@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "immer-tutorial"
+		},
+		{
+			"path": "todo-app2"
 		}
 	],
 	"settings": {}
