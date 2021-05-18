@@ -10,7 +10,7 @@ const App = () => {
 
   // input 수정을 위한 함수
   const onChange = useCallback(
-    e=>{
+    e => {
       const {name, value} = e.target;
       setForm({
         ...form,

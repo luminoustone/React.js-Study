@@ -13,7 +13,7 @@ const TodoInsert = ({ onInsert }) => {
         onInsert(value);
         setValue('');
         e.preventDefault();
-        },[onInsert, value]);
+    },[onInsert, value]);
 
     return (
         <form className="TodoInsert" onSubmit={onSubmit}>
