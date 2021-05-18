@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Profile from './Profile';
-
+import WithRouterSample from './WithRouterSample'
 const Profiles = () => {
     return (
         <div>
@@ -21,5 +21,4 @@ const Profiles = () => {
         </div>
     );
 };
-
 export default Profiles;
