@@ -23,6 +23,9 @@
 		},
 		{
 			"path": "router-tutorial"
+		},
+		{
+			"path": "news-viewer"
 		}
 	],
 	"settings": {}
