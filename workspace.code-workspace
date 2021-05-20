@@ -29,6 +29,9 @@
 		},
 		{
 			"path": "context-tutorial"
+		},
+		{
+			"path": "vanilla-redux"
 		}
 	],
 	"settings": {}
