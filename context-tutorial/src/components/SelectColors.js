@@ -21,7 +21,7 @@ const SelectColors = () => {
                                 }}
                                 onClick={() => actions.setColor(color)}
                                 onContextMenu={e => {
-                                    e.preventDefault();
+                                    e.preventDefault();//마우스 오른쪽 버튼 클릭 시 메뉴가 뜨는 것을 무시함
                                     actions.setSubcolor(color);
                                 }}
                             />
