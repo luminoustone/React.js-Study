@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "news-viewer"
+		},
+		{
+			"path": "context-tutorial"
 		}
 	],
 	"settings": {}
