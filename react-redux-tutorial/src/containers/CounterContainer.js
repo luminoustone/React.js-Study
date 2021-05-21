@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, useSelector } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Counter from "../components/Counter"
 import { decrease, increase } from '../modules/counter';
@@ -7,8 +7,15 @@ import { decrease, increase } from '../modules/counter';
 
 const CounterContainer = () => {
     const number = useSelector(state => state.counter.number);
-    return <Counter number={number} />;
+    const dispatch = useDispatch();
+    return (
+        <Counter 
+            number={number} 
+            onIncrease={() => dispatch(increase())}
+            onDecrease={() => dispatch(decrease())}
+        />
+    );
 };
 
 export default CounterContainer;
-//useSelector Hook을 사용하영 connect함수를 사용하지 않고도 리덕스의 상태를 조회할 수 있다.
+// container component에서 action을 dispatch해야 한다면 이 Hook을 사용한다.
