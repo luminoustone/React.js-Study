@@ -38,6 +38,9 @@
 		},
 		{
 			"path": "learn-redux-middleware"
+		},
+		{
+			"path": "blog-frontend"
 		}
 	],
 	"settings": {}
