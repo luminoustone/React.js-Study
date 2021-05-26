@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router';
 import { initializeForm, changeField, login } from '../../modules/auth';
@@ -6,6 +6,7 @@ import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../lib/api/auth';
 
 const LoginForm = ({ history }) => {
+    const [error, setError] = useState(null);
     const dispatch = useDispatch();
     const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
         form: auth.login,
@@ -41,6 +42,7 @@ const LoginForm = ({ history }) => {
         if (authError) {
             console.log('Error');
             console.log(authError);
+            setError('login fail...')
             return;
         }
         if (auth) {
@@ -61,6 +63,7 @@ const LoginForm = ({ history }) => {
             form={form}
             onChange={onChange}
             onSubmit={onSubmit}
+            error={error}
         />
     );
 };
