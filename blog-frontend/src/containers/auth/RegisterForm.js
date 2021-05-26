@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { initializeForm, changeField, register } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../lib/api/auth';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
-const RegisterForm = ({ history}) => {
+const RegisterForm = ({ history }) => {
+    const [error, setError] = useState(null);
     const dispatch = useDispatch();
     const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
         form: auth.register,
@@ -29,8 +30,15 @@ const RegisterForm = ({ history}) => {
     const onSubmit = e => {
         e.preventDefault();
         const { username, password, passwordConfirm } = form;
+        //하나라도 비어 있다면
+        if ([username, password, passwordConfirm].includes('')) {
+            setError('Something empty');
+            return;
+        }
         if (password !== passwordConfirm) {
-            //TODO: 오류 처리
+            setError('passwords are not equal');
+            dispatch(changeField({ form: 'register', key: 'password', value: ''}));
+            dispatch(changeField({ form: 'register', key: 'passwordConfirm', value: ''}));
             return ;
         }
         dispatch(register({ username, password }));
@@ -43,8 +51,11 @@ const RegisterForm = ({ history}) => {
 
     useEffect(() => {
         if(authError) {
+            if (authError.response.status === 409) {
+                setError('already exist ID');
+                return;
+            }
             console.log('Error');
-            console.log(authError);
             return;
         }
         if(auth) {
@@ -55,10 +66,12 @@ const RegisterForm = ({ history}) => {
     }, [auth, authError, dispatch]);
 
     useEffect(() => {
-        if (user) {
-            history.push('/');
+        if(user) {
+            console.log('check API success')
+            console.log(user);
+            history.push('/')
         }
-    }, [history, user]);
+    }, [ user]);
 
     return (
         <AuthForm
