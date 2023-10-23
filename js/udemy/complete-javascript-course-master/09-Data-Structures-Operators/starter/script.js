@@ -94,6 +94,9 @@ const restaurant = {
   },
 };
 
+/*
+//////////////////////////////////////////////////////////////////
+
 const orderSet = new Set([
   'Pasta',
   'Pizza',
@@ -105,6 +108,7 @@ const orderSet = new Set([
 console.log(orderSet);
 
 console.log(new Set('Jonas'));
+*/
 
 /*
 Coding Challenge #2
